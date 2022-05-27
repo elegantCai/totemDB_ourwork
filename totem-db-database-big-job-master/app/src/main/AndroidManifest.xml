@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="drz.oddb" >
+    <!-- 允许访问网络，必选权限 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许获取精确位置，精准定位必选 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 允许获取粗略位置，粗略定位必选 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 允许获取设备和运营商信息，用于问题排查和网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许获取网络状态，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许获取wifi网络信息，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 允许获取wifi状态改变，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 后台获取位置信息，若需后台定位则必选 -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- 用于申请调用A-GPS模块,卫星定位加速 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 允许写入扩展存储，用于写入缓存定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许读设备等信息，用于问题排查 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".ShowRoadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InputTipsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddPath"
+            android:exported="false" />
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
+
+        <service android:name=".MusicServer" >
+            <intent-filter>
+                <action android:name="com.angel.Android.MUSIC" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".show.PrintResult"
+            android:label="Print Result" >
+            <intent-filter>
+                <action android:name="android.intent.action.PRINTRST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".show.ShowTable"
+            android:label="ShowTable"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".show.ShowObj"
+            android:label="ShowObj"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".show.ShowSwi"
+            android:label="ShowSwi"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".show.ShowDep"
+            android:label="ShowDep"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".show.ShowBi"
+            android:label="ShowBi"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".show.ShowCla"
+            android:label="ShowCla"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".show.ShowUniDep"
+            android:label="ShowUniDep"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="26f4bf59de490f99951c4223f4f3847c" />
+
+        <uses-library
+            android:name="com.amap.api.maps.MapView"
+            android:required="false" />
+    </application>
+
+</manifest>
